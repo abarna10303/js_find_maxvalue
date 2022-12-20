@@ -1,11 +1,18 @@
-var price=[300,200,347,789,675,123,1524,908];
+var price=[300,200,347,789,675,123,1524,9078];
 var maxvalue;
 maxvalue=price[0];
-for(i=0;i<price.length;i++)
+function main(getcalback)
 {
-    if(price[i]>maxvalue)
+    for(i=0;i<price.length;i++)
     {
-        maxvalue=price[i];
+        if(price[i]>maxvalue)
+        {
+            maxvalue=price[i];
+        }
     }
+    getcalback();
 }
-document.write("Maximum Value : "+maxvalue);
+function callBack(){
+    document.write("Maximum Value : "+maxvalue);
+}
+main(callBack);
